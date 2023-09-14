@@ -24,9 +24,6 @@ class Cliente {
     }
 
     toString() {
-        return `Dados do Cliente
-        * Nome: ${this._nome}, 
-        * CPF: ${this._cpf},
-        * Conta: ${this._conta}`;
+        return `Dados do Cliente - Nome: ${this._nome} / CPF: ${this._cpf} / Conta: ${this._conta}`;
     }
 }
