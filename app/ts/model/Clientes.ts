@@ -1,14 +1,15 @@
 class Clientes {
 
-private clientes:Array<Cliente>;
+    private clientes:Array<Cliente>;
 
     constructor(){
-        this.clientes = new Array<Cliente>;
+        this.clientes = new Array<Cliente>();
     }
+   
     inserir(cliente:Cliente) {
         this.clientes.push(cliente);
     }
-    listar(){
+    listar(): Array<Cliente>{
         return this.clientes;
     }
 
@@ -16,7 +17,7 @@ private clientes:Array<Cliente>;
         return this.clientes.find(cliente => cliente.cpf === cpf);
     }
 
-    remover(cpf:number) {
+    remover(cpf:number): void {
         const clienteProcurar = this.pesquisar(cpf);
         if (clienteProcurar) {
             const indiceARemover = this.clientes.indexOf(clienteProcurar);

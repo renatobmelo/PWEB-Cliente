@@ -12,7 +12,6 @@ class ClienteController {
         this.clientes.inserir(novoCliente);
         this.inserirClienteNoHTML(novoCliente);
     }
-
     listar() {
         this.clientes.listar().forEach(cliente => {
             this.inserirClienteNoHTML(cliente);
