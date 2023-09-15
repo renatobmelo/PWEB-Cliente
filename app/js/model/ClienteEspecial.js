@@ -24,6 +24,6 @@ class ClienteEspecial extends Cliente{
     }
 
     toString() {
-        return `Dados do Cliente - Nome: ${super._nome} / CPF: ${super._cpf} / Conta: ${super._conta} / Dependentes: ${this._dependetes}`;
+        return `Dados do Cliente - Nome: ${super._nome} / CPF: ${super._cpf} / Conta: ${super._conta} / Dependentes: ${this._dependentes}`;
     }
 }

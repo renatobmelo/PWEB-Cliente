@@ -1,4 +1,10 @@
 class ClienteController {
+
+    private inputNome: HTMLInputElement;
+    private inputCpf: HTMLInputElement;
+
+    private clientes: Clientes;
+
     constructor() {
         this.inputNome =
             document.querySelector("#nome");
@@ -6,7 +12,7 @@ class ClienteController {
             document.querySelector("#cpf");
         this.clientes = new Clientes();
     }
-    inserir(evento) {
+    inserir(evento: Event) {
         evento.preventDefault();
         let novoCliente = new Cliente(this.inputNome.value, parseInt(this.inputCpf.value));
         this.clientes.inserir(novoCliente);
@@ -18,7 +24,7 @@ class ClienteController {
             this.inserirClienteNoHTML(cliente);
         });
     }
-    inserirClienteNoHTML(cliente) {
+    inserirClienteNoHTML(cliente: Cliente) {
         const elementoP = document.createElement('p');
         elementoP.textContent = cliente.toString();
         const botaoApagar = document.createElement('button');
@@ -26,7 +32,7 @@ class ClienteController {
         botaoApagar.addEventListener('click', (event) => {
             console.log('removendo cliente ' + cliente.toString());
             this.clientes.remover(cliente.cpf);
-            event.target.parentElement.remove();
+            (<Element>event.target).parentElement.remove();
         });
         elementoP.appendChild(botaoApagar);
         document.body.appendChild(elementoP);
